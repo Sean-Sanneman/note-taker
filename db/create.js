@@ -29,7 +29,6 @@ class Create {
 
   //create function to add notes
   addNote(note) {
-    console.log(note);
     const newNote = {
       title: note.title,
       text: note.text,
@@ -37,12 +36,9 @@ class Create {
     };
     return this.getNote()
       .then((notes) => {
-        console.log(notes);
         return [...notes, newNote];
       })
       .then((newNoteArr) => {
-        console.log(newNoteArr);
-        console.log(this);
         this.write(newNoteArr);
       })
       .then(() => newNote);
