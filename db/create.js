@@ -43,6 +43,11 @@ class Create {
       })
       .then(() => newNote);
   }
+  deleteNote(id) {
+    return this.getNote()
+      .then((notes) => notes.filter((note) => note.id !== id))
+      .then((filteredNotes) => this.write(filteredNotes));
+  }
 }
 
 module.exports = new Create();
